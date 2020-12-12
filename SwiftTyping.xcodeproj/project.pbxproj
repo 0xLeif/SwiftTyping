@@ -9,24 +9,29 @@
 /* Begin PBXBuildFile section */
 		294EE0252585224600291A29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE0242585224600291A29 /* AppDelegate.swift */; };
 		294EE0272585224600291A29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE0262585224600291A29 /* SceneDelegate.swift */; };
-		294EE0292585224600291A29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE0282585224600291A29 /* ViewController.swift */; };
 		294EE02C2585224600291A29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294EE02A2585224600291A29 /* Main.storyboard */; };
 		294EE02E2585224900291A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 294EE02D2585224900291A29 /* Assets.xcassets */; };
 		294EE0312585224900291A29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294EE02F2585224900291A29 /* LaunchScreen.storyboard */; };
 		294EE03B2585228000291A29 /* Fake in Frameworks */ = {isa = PBXBuildFile; productRef = 294EE03A2585228000291A29 /* Fake */; };
 		294EE03F258522A000291A29 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 294EE03E258522A000291A29 /* SwiftUIKit */; };
+		294EE0472585271000291A29 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE0462585271000291A29 /* StartScreen.swift */; };
+		294EE04B2585271A00291A29 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE04A2585271A00291A29 /* GameScreen.swift */; };
+		294EE04E2585272600291A29 /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE04D2585272600291A29 /* ResultScreen.swift */; };
+		294EE05325852B5800291A29 /* EKit in Frameworks */ = {isa = PBXBuildFile; productRef = 294EE05225852B5800291A29 /* EKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		294EE0212585224600291A29 /* SwiftTyping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTyping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		294EE0242585224600291A29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		294EE0262585224600291A29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		294EE0282585224600291A29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		294EE02B2585224600291A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		294EE02D2585224900291A29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		294EE0302585224900291A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		294EE0322585224900291A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		294EE0412585246B00291A29 /* SwiftTyping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftTyping.entitlements; sourceTree = "<group>"; };
+		294EE0462585271000291A29 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		294EE04A2585271A00291A29 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		294EE04D2585272600291A29 /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				294EE03B2585228000291A29 /* Fake in Frameworks */,
+				294EE05325852B5800291A29 /* EKit in Frameworks */,
 				294EE03F258522A000291A29 /* SwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,16 +67,26 @@
 		294EE0232585224600291A29 /* SwiftTyping */ = {
 			isa = PBXGroup;
 			children = (
+				294EE0452585270000291A29 /* Screens */,
 				294EE0412585246B00291A29 /* SwiftTyping.entitlements */,
 				294EE0242585224600291A29 /* AppDelegate.swift */,
 				294EE0262585224600291A29 /* SceneDelegate.swift */,
-				294EE0282585224600291A29 /* ViewController.swift */,
 				294EE02A2585224600291A29 /* Main.storyboard */,
 				294EE02D2585224900291A29 /* Assets.xcassets */,
 				294EE02F2585224900291A29 /* LaunchScreen.storyboard */,
 				294EE0322585224900291A29 /* Info.plist */,
 			);
 			path = SwiftTyping;
+			sourceTree = "<group>";
+		};
+		294EE0452585270000291A29 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				294EE0462585271000291A29 /* StartScreen.swift */,
+				294EE04A2585271A00291A29 /* GameScreen.swift */,
+				294EE04D2585272600291A29 /* ResultScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +108,7 @@
 			packageProductDependencies = (
 				294EE03A2585228000291A29 /* Fake */,
 				294EE03E258522A000291A29 /* SwiftUIKit */,
+				294EE05225852B5800291A29 /* EKit */,
 			);
 			productName = SwiftTyping;
 			productReference = 294EE0212585224600291A29 /* SwiftTyping.app */;
@@ -123,6 +140,7 @@
 			packageReferences = (
 				294EE0392585228000291A29 /* XCRemoteSwiftPackageReference "Fake" */,
 				294EE03D258522A000291A29 /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
+				294EE05125852B5700291A29 /* XCRemoteSwiftPackageReference "EKit" */,
 			);
 			productRefGroup = 294EE0222585224600291A29 /* Products */;
 			projectDirPath = "";
@@ -151,8 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				294EE0292585224600291A29 /* ViewController.swift in Sources */,
+				294EE04B2585271A00291A29 /* GameScreen.swift in Sources */,
 				294EE0252585224600291A29 /* AppDelegate.swift in Sources */,
+				294EE0472585271000291A29 /* StartScreen.swift in Sources */,
+				294EE04E2585272600291A29 /* ResultScreen.swift in Sources */,
 				294EE0272585224600291A29 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +399,14 @@
 				minimumVersion = 2.2.0;
 			};
 		};
+		294EE05125852B5700291A29 /* XCRemoteSwiftPackageReference "EKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/0xLeif/EKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -391,6 +419,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 294EE03D258522A000291A29 /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
 			productName = SwiftUIKit;
+		};
+		294EE05225852B5800291A29 /* EKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 294EE05125852B5700291A29 /* XCRemoteSwiftPackageReference "EKit" */;
+			productName = EKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
