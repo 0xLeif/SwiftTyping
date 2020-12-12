@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		294EE02C2585224600291A29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294EE02A2585224600291A29 /* Main.storyboard */; };
 		294EE02E2585224900291A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 294EE02D2585224900291A29 /* Assets.xcassets */; };
 		294EE0312585224900291A29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294EE02F2585224900291A29 /* LaunchScreen.storyboard */; };
+		294EE03B2585228000291A29 /* Fake in Frameworks */ = {isa = PBXBuildFile; productRef = 294EE03A2585228000291A29 /* Fake */; };
+		294EE03F258522A000291A29 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 294EE03E258522A000291A29 /* SwiftUIKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		294EE02D2585224900291A29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		294EE0302585224900291A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		294EE0322585224900291A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		294EE0412585246B00291A29 /* SwiftTyping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftTyping.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294EE03B2585228000291A29 /* Fake in Frameworks */,
+				294EE03F258522A000291A29 /* SwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,7 @@
 		294EE0232585224600291A29 /* SwiftTyping */ = {
 			isa = PBXGroup;
 			children = (
+				294EE0412585246B00291A29 /* SwiftTyping.entitlements */,
 				294EE0242585224600291A29 /* AppDelegate.swift */,
 				294EE0262585224600291A29 /* SceneDelegate.swift */,
 				294EE0282585224600291A29 /* ViewController.swift */,
@@ -83,6 +89,10 @@
 			dependencies = (
 			);
 			name = SwiftTyping;
+			packageProductDependencies = (
+				294EE03A2585228000291A29 /* Fake */,
+				294EE03E258522A000291A29 /* SwiftUIKit */,
+			);
 			productName = SwiftTyping;
 			productReference = 294EE0212585224600291A29 /* SwiftTyping.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +120,10 @@
 				Base,
 			);
 			mainGroup = 294EE0182585224600291A29;
+			packageReferences = (
+				294EE0392585228000291A29 /* XCRemoteSwiftPackageReference "Fake" */,
+				294EE03D258522A000291A29 /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
+			);
 			productRefGroup = 294EE0222585224600291A29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,15 +300,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftTyping/SwiftTyping.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M8SAX62V2;
 				INFOPLIST_FILE = SwiftTyping/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ol.SwiftTyping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,15 +322,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftTyping/SwiftTyping.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M8SAX62V2;
 				INFOPLIST_FILE = SwiftTyping/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ol.SwiftTyping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -341,6 +361,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		294EE0392585228000291A29 /* XCRemoteSwiftPackageReference "Fake" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/0xLeif/Fake";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+		294EE03D258522A000291A29 /* XCRemoteSwiftPackageReference "SwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/0xLeif/SwiftUIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		294EE03A2585228000291A29 /* Fake */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 294EE0392585228000291A29 /* XCRemoteSwiftPackageReference "Fake" */;
+			productName = Fake;
+		};
+		294EE03E258522A000291A29 /* SwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 294EE03D258522A000291A29 /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
+			productName = SwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 294EE0192585224600291A29 /* Project object */;
 }

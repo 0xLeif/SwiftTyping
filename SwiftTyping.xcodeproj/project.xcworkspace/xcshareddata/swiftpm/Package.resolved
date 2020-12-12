@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Fake",
+        "repositoryURL": "https://github.com/0xLeif/Fake",
+        "state": {
+          "branch": null,
+          "revision": "617cc60b35040494923304ad1c3fd4356371daaa",
+          "version": "0.1.1"
+        }
+      },
+      {
+        "package": "Later",
+        "repositoryURL": "https://github.com/0xLeif/Later",
+        "state": {
+          "branch": null,
+          "revision": "3ec8bc9dac95a5c4927dcc36b0c1cfbb540e6cbb",
+          "version": "0.4.1"
+        }
+      },
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "2bae395344d41710dffab456265d534d7dc34ab8",
+          "version": "2.25.0"
+        }
+      },
+      {
+        "package": "SwiftUIKit",
+        "repositoryURL": "https://github.com/0xLeif/SwiftUIKit",
+        "state": {
+          "branch": null,
+          "revision": "8ff6c4579e054309770aed7f11fa0081213c4cc9",
+          "version": "2.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
