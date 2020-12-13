@@ -29,6 +29,14 @@ class GameScreen: UIViewController {
     
     private var gameView: UIView = UIView()
     
+    private var resultsView: UIView {
+        UIView(backgroundColor: .systemBackground).center {
+            Label.title1("# Correct: \(correct)")
+                .number(ofLines: 0)
+        }
+        .navigateSet(title: "Results")
+    }
+    
     init(
         timeLimit: UInt,
         difficulty: UInt
@@ -69,17 +77,25 @@ class GameScreen: UIViewController {
         gameView.clear()
             .embed {
                 SafeAreaView {
-                    VStack(distribution: .fillEqually) {
+                    VStack(withSpacing: 16) {
                         [
-                            
-                            Label(word).number(ofLines: 0),
+                            VScroll {
+                                Label.headline(word)
+                                    .number(ofLines: 0)
+                            }
+                            .frame(height: 120)
+                            .padding(),
                             
                             Field(value: "",
-                                  placeholder: "...",
+                                  placeholder: "",
                                   keyboardType: .default)
                                 .inputHandler { [weak self] in
                                     self?.typed = $0
                                     self?.softCheck()
+                                }
+                                .configure { field in
+                                    field.borderStyle = .roundedRect
+                                    field.becomeFirstResponder()
                                 },
                             
                             Spacer(),
@@ -87,11 +103,23 @@ class GameScreen: UIViewController {
                             Button("Done") { [weak self] in
                                 self?.check()
                             }
+                            .set(titleColor: .white)
+                            .frame(height: 60)
+                            .layer(backgroundColor: .systemBlue)
+                            .layer(cornerRadius: 8)
                             
                         ]
                     }
+                    
                 }
             }
+            .gesture {
+                UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            }
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func softCheck() {
@@ -104,6 +132,7 @@ class GameScreen: UIViewController {
     
     private func check() {
         defer {
+            Navigate.shared.set(title: "Correct: \(correct)")
             word = Fake.Word.Random.sentence(words: difficulty)
             typed = ""
             draw()
@@ -120,16 +149,12 @@ class GameScreen: UIViewController {
         }
         
         correct += 1
-        
-        Navigate.shared.toast(style: .success,
-                              pinToTop: true,
-                              secondsToPersist: 1,
-                              padding: 32) {
-            Label.title1("Correct!")
-        }
     }
     
     private func showResults() {
-        Navigate.shared.go(ResultScreen(correct: correct), style: .push)
+        gameView.clear()
+            .embed {
+            resultsView
+        }
     }
 }

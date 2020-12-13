@@ -26,54 +26,64 @@ class StartScreen: UIViewController {
         
         view.background(color: .systemBackground)
             .embed {
-                SafeAreaView {
-                    VStack(distribution: .fillEqually) {
+                VScroll {
+                    VStack(withSpacing: 16, padding: 32) {
                         [
-                            Spacer(),
+                            Label.title1("Select your time limit and difficulty")
+                                .number(ofLines: 3),
                             
-                            VStack(withSpacing: 16) {
+                            HStack(withSpacing: 8, distribution: .fillProportionally) {
                                 [
-                                    Label("Select your time limit and difficulty"),
+                                    Label.callout("Seconds"),
                                     
-                                    HStack(withSpacing: 8) {
-                                        [
-                                            Label("Seconds").setHorizontal(huggingPriority: .required),
+                                    Field(value: "\(timeLimit)", placeholder: "# of Seconds", keyboardType: .numberPad)
+                                        .inputHandler { [weak self] value in
+                                            guard let timeLimit = UInt(value) else {
+                                                return
+                                            }
                                             
-                                            Field(value: "", placeholder: "# of Seconds", keyboardType: .numberPad)
-                                                .inputHandler { [weak self] value in
-                                                    guard let timeLimit = UInt(value) else {
-                                                        return
-                                                    }
-                                                    
-                                                    self?.timeLimit = timeLimit
-                                                }
-                                                .configure { $0.borderStyle = .roundedRect },
-                                        ]
-                                    },
-                                    
-                                    HStack(withSpacing: 8) {
-                                        [
-                                            Label("Words").setHorizontal(huggingPriority: .required),
-                                            
-                                            Field(value: "", placeholder: "# of Words", keyboardType: .numberPad)
-                                                .inputHandler { [weak self] value in
-                                                    guard let difficulty = UInt(value) else {
-                                                        return
-                                                    }
-                                                    
-                                                    self?.difficulty = difficulty
-                                                }
-                                                .configure { $0.borderStyle = .roundedRect },
-                                        ]
-                                    },
+                                            self?.timeLimit = timeLimit
+                                        }
+                                        .configure {
+                                            $0.borderStyle = .roundedRect
+                                            $0.autocapitalizationType = .none
+                                            $0.autocorrectionType = .no
+                                        },
                                 ]
-                            },
+                            }
+                            .frame(height: 60),
+                            
+                            HStack(withSpacing: 8, distribution: .fillProportionally) {
+                                [
+                                    Label.callout("Words"),
+                                    
+                                    Field(value: "\(difficulty)", placeholder: "# of Words", keyboardType: .numberPad)
+                                        .inputHandler { [weak self] value in
+                                            guard let difficulty = UInt(value) else {
+                                                return
+                                            }
+                                            
+                                            self?.difficulty = difficulty
+                                        }
+                                        
+                                        .configure {
+                                            $0.borderStyle = .roundedRect
+                                            $0.autocapitalizationType = .none
+                                            $0.autocorrectionType = .no
+                                        },
+                                ]
+                            }
+                            .frame(height: 60),
                             
                             Spacer(),
                             
                             Button("Start!") { [weak self] in
                                 self?.start()
                             }
+                            .set(titleColor: .white)
+                            .frame(height: 60)
+                            .layer(backgroundColor: .systemBlue)
+                            .layer(cornerRadius: 8)
                         ]
                     }
                 }
@@ -90,6 +100,10 @@ class StartScreen: UIViewController {
     private func start() {
         guard timeLimit > 0,
               difficulty > 0 else {
+            Navigate.shared.alert(title: "Select your time limit and difficulty",
+                                  message: "Good Luck!",
+                                  withActions: [.dismiss],
+                                  secondsToPersist: nil)
             return
         }
         

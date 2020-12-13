@@ -16,7 +16,6 @@
 		294EE03F258522A000291A29 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 294EE03E258522A000291A29 /* SwiftUIKit */; };
 		294EE0472585271000291A29 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE0462585271000291A29 /* StartScreen.swift */; };
 		294EE04B2585271A00291A29 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE04A2585271A00291A29 /* GameScreen.swift */; };
-		294EE04E2585272600291A29 /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294EE04D2585272600291A29 /* ResultScreen.swift */; };
 		294EE05325852B5800291A29 /* EKit in Frameworks */ = {isa = PBXBuildFile; productRef = 294EE05225852B5800291A29 /* EKit */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		294EE0412585246B00291A29 /* SwiftTyping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftTyping.entitlements; sourceTree = "<group>"; };
 		294EE0462585271000291A29 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		294EE04A2585271A00291A29 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
-		294EE04D2585272600291A29 /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 			children = (
 				294EE0462585271000291A29 /* StartScreen.swift */,
 				294EE04A2585271A00291A29 /* GameScreen.swift */,
-				294EE04D2585272600291A29 /* ResultScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -172,7 +169,6 @@
 				294EE04B2585271A00291A29 /* GameScreen.swift in Sources */,
 				294EE0252585224600291A29 /* AppDelegate.swift in Sources */,
 				294EE0472585271000291A29 /* StartScreen.swift in Sources */,
-				294EE04E2585272600291A29 /* ResultScreen.swift in Sources */,
 				294EE0272585224600291A29 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
